@@ -1,10 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import Web3Modal from 'web3modal';
 import {providers, Contract} from "ethers"; 
 import {useState, useEffect, useRef} from "react"; 
 import { WHITELIST_CONTRACT_ADDRESS, abi } from './constants';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
 export default function App() { 
@@ -176,15 +174,7 @@ const renderButton = () => {
 
 };
 
-const mintPage = () => {
-  if(!mint)  {
-    return (
-      <div>Hello</div>
-    )
 
-  }
-
-}
 
 //useEffects are used to react to changes in state of website
 //The arry at the end of the function call represents what changes will trigger this effect
