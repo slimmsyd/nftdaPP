@@ -1,0 +1,5 @@
+
+ const WHITELIST_CONTRACT_ADDRESS = "0xfF1F903F85aE10571d27d9941F893B0F7422E6DF";
+ const METADATA_URL = "https://api.fluf.world/api/token/2"
+
+ module.exports = {  WHITELIST_CONTRACT_ADDRESS , METADATA_URL}

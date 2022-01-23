@@ -65,5 +65,4 @@ export const abi =  [
 ]
 
 
-export const WHITELIST_CONTRACT_ADDRESS = "0xDbA51c90be31187a0A48Ed48FBFF7661Ea5974eA";
-export const METADATA_URL = "https://api.fluf.world/api/token/3"
+export const WHITELIST_CONTRACT_ADDRESS = "0xfF1F903F85aE10571d27d9941F893B0F7422E6DF";

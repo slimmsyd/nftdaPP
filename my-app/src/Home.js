@@ -18,7 +18,6 @@ export default function App() {
   const Web3ModalRef = useRef(); 
 
   //Switch to mint page 
-  const [mint, setMint] = useState(false)
 
 
  /**

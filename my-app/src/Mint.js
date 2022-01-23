@@ -3,7 +3,7 @@ import './App.css';
 
 import React, { useEffect, useRef, useState } from "react";
 import Web3Modal from "web3modal";
-import { abi, NFT_CONTRACT_ADDRESS } from "./constants/main";
+import { abi, NFT_CONTRACT_ADDRESS } from "./constants/nft";
 
 
 
@@ -176,14 +176,14 @@ export default function Mint() {
             
             const nftContract = new Contract(NFT_CONTRACT_ADDRESS, abi, provider);
 
-            const preSaleEnded = await nftContract.presaleEnded()
+            const _presaleEnded = await nftContract.presaleEnded();
 
             //presaleEnded is a Big Number, so we are using the It instead of <
             //Date.now()/100 returns the current time in seconds
             //We compare if the presaleEnded timesteamp is les than the current time
             //which means presale has ended
 
-            const hasEnded  = preSaleEnded.It(Math.floor(Date.now() / 100));
+            const hasEnded  = _presaleEnded.lt(Math.floor(Date.now() / 100));
             if(hasEnded) { 
                 setPresaleEnded(true);
             }else { 

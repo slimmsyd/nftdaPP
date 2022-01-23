@@ -87,6 +87,32 @@ contract CryptoDevs is ERC721Enumerable, Ownable {
 
     }
 
+    //_baseURI overrides the Openzepplins ERC721 implementaion which returned a empty string for baseURI
+
+    function _baseURI() internal view virtual override returns (string memory) { 
+        return _baseTokenURI;
+
+
+
+    }
+
+    function withdraw() public onlyOwner { 
+
+        address _owner = owner();
+        uint256 amount = address(this).balance;
+        (bool sent,) = _owner.call{value: amount}("");
+        require(sent, "Failed to send ether");
+
+    }
+
+
+    //Function to recieve Ether msg.data must be empty
+    receive() external payable {}
+    
+    //Fallback function is called when msg.data is not empty
+    fallback() external payable {}
+
+
 
 
 
